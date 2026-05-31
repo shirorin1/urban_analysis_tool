@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UrbanAnalysisToolDialogBase</class>
+ <widget class="QDialog" name="UrbanAnalysisToolDialogBase">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Анализ городской среды - Urban Analysis Tool</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label_title">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Инструмент пространственного анализа</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_mode">
+     <property name="text">
+      <string>Режим анализа:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QComboBox" name="comboBox_mode">
+     <item>
+      <property name="text">
+       <string>Коэффициент доступности инфраструктуры</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Проверка санитарно-защитных зон (СЗЗ)</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_homes">
+     <property name="text">
+      <string>Слой жилой застройки:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QgsMapLayerComboBox" name="mComboBox_homes"/>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_objects">
+     <property name="text">
+      <string>Объекты инфраструктуры:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QgsMapLayerComboBox" name="mComboBox_objects"/>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_object_type">
+     <property name="text">
+      <string>Тип объектов (норматив):</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QComboBox" name="comboBox_object_type">
+     <item>
+      <property name="text">
+       <string>Школы (500 м)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Детские сады (350 м)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Поликлиники (800 м)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Аптеки (500 м)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Детские площадки (300 м)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Остановки транспорта (500 м)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Произвольный радиус</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_radius">
+     <property name="text">
+      <string>Радиус анализа (метры):</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="lineEdit_radius">
+     <property name="text">
+      <string>500</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkBox_use_norm_radius">
+     <property name="text">
+      <string>Использовать нормативный радиус</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_min_norm">
+     <property name="text">
+      <string>Минимальная норма обеспеченности домов (%):</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="lineEdit_min_norm_percent">
+     <property name="text">
+      <string>95</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="checkBox_show_report">
+     <property name="text">
+      <string>Показать сводный отчет</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="button_box">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QgsMapLayerComboBox</class>
+   <extends>QComboBox</extends>
+   <header>qgsmaplayercombobox.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>button_box</sender>
+   <signal>accepted()</signal>
+   <receiver>UrbanAnalysisToolDialogBase</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>button_box</sender>
+   <signal>rejected()</signal>
+   <receiver>UrbanAnalysisToolDialogBase</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

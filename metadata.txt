@@ -1,0 +1,47 @@
+# This file contains metadata for your plugin.
+
+# This file should be included when you package your plugin.# Mandatory items:
+
+[general]
+name=Urban Analysis Tool
+qgisMinimumVersion=3.0
+description= Инструмент для расчета и анализа пространственного расположения предприятий и социальных объектов
+version=0.1
+author=Шапошникова А.С.
+email=wmwmwm2002s@gmail.com
+
+about=Инструмент для пространственного анализа городской инфраструктуры в QGIS. Плагин позволяет: - рассчитывать коэффициент доступности социальных объектов (магазины, парки, остановки общественного транспорта) для жилой застройки; - проверять соблюдение санитарно-защитных зон (СЗЗ) промышленных предприятий согласно СанПиН 2.2.1/2.1.1.1200-03; - автоматически строить буферные зоны на основе класса опасности объектов; - выявлять нарушения нормативных требований к размещению объектов. Инструмент предназначен для урбанистов, градостроителей и специалистов по территориальному планированию.
+
+tracker=http://bugs
+repository=http://repo
+# End of mandatory metadata
+
+# Recommended items:
+
+hasProcessingProvider=no
+# Uncomment the following line and add your changelog:
+# changelog=
+
+# Tags are comma separated with spaces allowed
+tags=python, qgis, urban planning, gis, accessibility, spatial analysis
+
+homepage=http://homepage
+category=Plugins
+icon=icon.png
+# experimental flag
+experimental=False
+
+# deprecated flag (applies to the whole plugin, not just a single version)
+deprecated=False
+
+# Since QGIS 3.8, a comma separated list of plugins to be installed
+# (or upgraded) can be specified.
+# Check the documentation for more information.
+# plugin_dependencies=
+
+Category of the plugin: Raster, Vector, Database or Web
+# category=
+
+# If the plugin can run on QGIS Server.
+server=False
+
